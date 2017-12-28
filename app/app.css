@@ -1,0 +1,350 @@
+/* app css stylesheet */
+
+.theme-dark{
+  color: white;
+  background: linear-gradient(rgba(52, 12, 1, 0.97), rgba(62, 11, 0, 0.93));
+}
+
+html{
+  font-family: sans-serif;
+}
+
+button:focus
+{
+  outline: none;
+}
+
+.google-e-style{
+  transform: rotate(-25deg);
+  display: inline-block;
+}
+
+.title{
+  padding: .7em 2px .7em 2em ;
+  border-bottom: 1px solid rgba(136, 103, 62, 0.87);
+  display: flex;
+}
+
+.title .logo
+{
+  font-size: 2em;
+  font-weight: 500;
+  width: 175px;
+}
+
+.title .search
+{
+  flex:1
+}
+
+.title .utilities
+{
+  width: 140px;
+  padding-right: 10px;
+}
+
+.search
+{
+  display: flex;
+}
+
+.search > div:first-child
+{
+  flex: 2;
+}
+
+.search .dropdown-arrow:hover
+{
+  color:black;
+}
+
+.search > div:last-child
+{
+  flex: 1;
+}
+
+.search > div{
+  display: flex;
+  position: relative;
+  top: 5px;
+}
+
+.utilities > div
+{
+  position: relative;
+  top: 5px;
+  display: flex;
+}
+
+.utilities button
+{
+  background-color: transparent;
+  border: 0;
+  flex:1;
+}
+
+.utilities button i
+{
+  position: relative;
+  top: 5px;
+}
+
+.search > div > input
+{
+  color: black;
+  border : 0;
+  padding: 0;
+  flex: 1;
+  height: 30px;
+  padding-left: 5px ;
+}
+.search > div > button
+{
+  height: 30px;
+  border: 0;
+}
+.search .dropdown-arrow{
+  width:30px;
+  color: gray;
+  background-color: white;
+}
+
+.dropdown-arrow i{
+  position: relative;
+  top: -3px;
+}
+
+.search-btn
+{
+  width:65px;
+  color: white;
+  background-color: rgba(46, 130, 209, 0.68);
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.mail {
+  min-height: 500px;
+}
+
+.toolbar
+{
+  display: flex;
+  padding: .7em .7em .7em 2em ;
+  border-bottom: 1px solid rgba(136, 103, 62, 0.87);
+  min-height: 50px;
+}
+
+.toolbar .gmail
+{
+  width: 175px;
+}
+
+.toolbar .tools
+{
+  flex:4;
+  display:flex;
+}
+
+.toolbar .paging
+{
+  flex:2;
+}
+
+.toolbar .gmail button
+{
+  background-color: transparent;
+  border: 0;
+  font-size: 20px;
+}
+
+.toolbar .gmail button i
+{
+  left: 10px;
+  font-size: small;
+}
+
+.toolbar .tools div
+{
+  margin-right: 20px;
+  display: inline-block;
+}
+
+.g-button
+{
+  background-color: rgba(204, 204, 204, 0.99);
+  border: 1px solid gray;
+  color: #494949;
+  height: 30px;
+  border-radius: 3px;
+  font-size: smaller;
+  font-weight: bold;
+}
+
+.g-button:hover
+{
+  background-color: rgba(234, 234, 234, 0.99);
+  border: 1px solid gray;
+  color: #232323;
+}
+
+.button-group
+{
+  position: relative;
+  display: flex;
+}
+
+.button-group button
+{
+  position: relative;
+  float:left;
+  border-radius: 0px !important;
+  border-left: 0px !important;
+  width: 75px;
+}
+.button-group button:first-child
+{
+  border-top-left-radius: 3px !important;
+  border-bottom-left-radius: 3px !important;
+
+}
+.button-group button:last-child
+{
+  border-top-right-radius: 3px !important;
+  border-bottom-right-radius: 3px !important;
+}
+
+.g-button i.fa-sort-desc
+{
+  padding-left: 5px;
+  position:relative;
+  top:-2px;
+}
+
+.paging
+{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+.paging div
+{
+  margin-left: 20px;
+  display: inline-block;
+  font-size: medium;
+}
+
+.page-btn
+{
+  width: 35px !important;
+}
+
+.current-page
+{
+  display: inline-block;
+  position: relative;
+  top:-8px;
+}
+
+.navigation
+{
+  padding: .7em .7em .7em 0em;
+  width: 210px;
+}
+
+.compose-mail
+{
+  padding-left: 2em;
+  padding-bottom: 3px;
+}
+
+.new-mail
+{
+  width: 120px;
+  height: 35px;
+  background-color: white;
+  color: black;
+}
+
+.g-menu
+{
+}
+
+.g-nav-item-outer
+{
+  display: flex;
+  padding: 2px 0 2px 0;
+}
+
+.g-nav-item-outer div
+{
+ display: inline-block;
+}
+
+.selected
+{
+  font-weight: bold;
+}
+
+.selection-indicator
+{
+  width: .25em;
+  height: 25px;
+}
+
+.selection-indicator.selected
+{
+  background-color: white;
+}
+
+.g-nav-item-outer .item
+{
+  padding-left: 1.75em;
+  position: relative;
+  top:2px;
+}
+
+.menu-button
+{
+  background-color: transparent;
+  border: 0;
+  color: white;
+}
+
+.g-nav-item-outer:hover
+{
+  background-color: rgba(0, 0, 0, 0.27);
+}
+
+.mail-main
+{
+  display: flex;
+}
+
+.mail-main > div:last-child{
+  flex:1;
+}
+
+.mail-outer
+{
+  padding: .7em .7em .7em 0em;
+}
+
+md-tab-item
+{
+  background-color: white;
+  color: black!important;
+  text-transform: none!important;
+  width: 200px;
+}
+
+.tab-title
+{
+}
+
+.tab-title-text
+{
+  display: inline-block;
+  padding-left: 10px;
+}
