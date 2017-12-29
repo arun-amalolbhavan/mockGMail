@@ -2,11 +2,15 @@
 
 .theme-dark{
   color: white;
-  background: linear-gradient(rgba(52, 12, 1, 0.97), rgba(62, 11, 0, 0.93));
+  background: linear-gradient(rgba(40, 9, 1, 0.97), rgba(53, 9, 0, 0.93));
 }
 
 html{
   font-family: sans-serif;
+}
+
+body{
+  min-width: 860px;
 }
 
 button:focus
@@ -18,6 +22,8 @@ button:focus
   transform: rotate(-25deg);
   display: inline-block;
 }
+
+/* Style for the title section */
 
 .title{
   padding: .7em 2px .7em 2em ;
@@ -32,25 +38,33 @@ button:focus
   width: 175px;
 }
 
-.title .search
+@media (max-width: 1061px) {
+  .title .search {
+    flex: 4;
+    display: flex;
+
+  }
+}
+
+@media (min-width: 1062px)
 {
-  flex:1
+  .title .search {
+    width: 700px;
+  }
 }
 
 .title .utilities
 {
+  flex:1;
   width: 140px;
   padding-right: 10px;
-}
-
-.search
-{
   display: flex;
+  justify-content: flex-end;
 }
 
-.search > div:first-child
+.search > .input-group
 {
-  flex: 2;
+  flex: 4;
 }
 
 .search .dropdown-arrow:hover
@@ -58,33 +72,8 @@ button:focus
   color:black;
 }
 
-.search > div:last-child
-{
-  flex: 1;
-}
-
 .search > div{
   display: flex;
-  position: relative;
-  top: 5px;
-}
-
-.utilities > div
-{
-  position: relative;
-  top: 5px;
-  display: flex;
-}
-
-.utilities button
-{
-  background-color: transparent;
-  border: 0;
-  flex:1;
-}
-
-.utilities button i
-{
   position: relative;
   top: 5px;
 }
@@ -103,6 +92,7 @@ button:focus
   height: 30px;
   border: 0;
 }
+
 .search .dropdown-arrow{
   width:30px;
   color: gray;
@@ -123,9 +113,32 @@ button:focus
   border-top-right-radius: 2px;
 }
 
+.utilities > div
+{
+  position: relative;
+  display: flex;
+  top: -4px;
+}
+
+.utilities button
+{
+  background-color: transparent;
+  border: 0;
+  flex:1;
+  padding-left: 1em;
+}
+
+.utilities button i
+{
+  position: relative;
+  top: 5px;
+}
+
 .mail {
   min-height: 500px;
 }
+
+/* Style for toolbar section */
 
 .toolbar
 {
@@ -183,7 +196,7 @@ button:focus
 
 .g-button:hover
 {
-  background-color: rgba(234, 234, 234, 0.99);
+  background-color: white;
   border: 1px solid gray;
   color: #232323;
 }
@@ -200,8 +213,52 @@ button:focus
   float:left;
   border-radius: 0px !important;
   border-left: 0px !important;
-  width: 75px;
 }
+
+@media (min-width: 1120px)
+{
+  .button-group button
+  {
+    width: 75px;
+  }
+
+  .page-btn
+  {
+    width: 35px !important;
+  }
+}
+
+@media (max-width: 1119px)
+{
+  .button-group button
+  {
+    width: 55px;
+  }
+
+  .page-btn
+  {
+    width: 30px !important;
+  }
+
+  .toolbar .tools div
+  {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 880px)
+{
+  .current-page
+  {
+    display: none;
+  }
+
+  md-tab-item
+  {
+    width: 200px !important;
+  }
+}
+
 .button-group button:first-child
 {
   border-top-left-radius: 3px !important;
@@ -221,31 +278,26 @@ button:focus
   top:-2px;
 }
 
-.paging
+/* style for paging section */
+
+.paging > div
 {
   display: flex;
   justify-content: flex-end;
-  padding-right: 10px;
+  font-size: small;
 }
 
-.paging div
-{
-  margin-left: 20px;
-  display: inline-block;
-  font-size: medium;
-}
-
-.page-btn
-{
-  width: 35px !important;
+.paging div div{
+  padding-left: 10px;
 }
 
 .current-page
 {
-  display: inline-block;
   position: relative;
-  top:-8px;
+  top:8px;
 }
+
+/* Styles for navigation section */
 
 .navigation
 {
@@ -267,10 +319,6 @@ button:focus
   color: black;
 }
 
-.g-menu
-{
-}
-
 .g-nav-item-outer
 {
   display: flex;
@@ -279,7 +327,7 @@ button:focus
 
 .g-nav-item-outer div
 {
- display: inline-block;
+  display: inline-block;
 }
 
 .selected
@@ -317,6 +365,11 @@ button:focus
   background-color: rgba(0, 0, 0, 0.27);
 }
 
+/*
+Styles for main section
+It contains the list of mails
+*/
+
 .mail-main
 {
   display: flex;
@@ -333,10 +386,16 @@ button:focus
 
 md-tab-item
 {
-  background-color: white;
+  background-color: #e1e1e1;
   color: black!important;
   text-transform: none!important;
-  width: 200px;
+  width: 220px;
+  border-right: 1px solid lightgray;
+}
+
+md-tab-item.md-active
+{
+  background-color: white;
 }
 
 .tab-title
@@ -347,4 +406,16 @@ md-tab-item
 {
   display: inline-block;
   padding-left: 10px;
+}
+
+md-tabs
+{
+  height: 500px !important;
+}
+
+md-content
+{
+  height: 500px;
+  margin: 0 !important;
+  padding: 0 !important;
 }
