@@ -1,2 +1,2 @@
-# `MockGMail` — A mock GMail web clinet using AngularJS
+# `MockGMail` — A mock G_Mail web clinet using AngularJS
 
