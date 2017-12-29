@@ -485,3 +485,15 @@ md-content
   padding-right:15px;
   background-color: #e7e7e7 !important;
 }
+
+.list-item-outer .item-star i:hover
+{
+  color: darkgoldenrod;
+  font-weight: bold;
+}
+
+.list-item-outer .item-important i:hover
+{
+  color: darkgoldenrod;
+  font-weight: bold;
+}
