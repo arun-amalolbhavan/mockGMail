@@ -5,7 +5,7 @@ angular.module('myApp.mail', ['ui.router','ngMaterial'])
     .config(['$stateProvider', function($stateProvider) {
         $stateProvider.state('mail', {
             url: '/mail',
-            templateUrl: 'view/mail/mail.html',
+            templateUrl: 'View/Mail/mail.html',
             controller: 'MailCtrl'
         });
 

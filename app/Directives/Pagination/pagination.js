@@ -8,7 +8,7 @@ angular.module('myApp.mail')
         }]
 
         return{
-            templateUrl: 'directives/pagination/pagination.html',
+            templateUrl: 'Directives/Pagination/pagination.html',
             controller: controller,
             controllerAs: 'vm',
             bindToController: true

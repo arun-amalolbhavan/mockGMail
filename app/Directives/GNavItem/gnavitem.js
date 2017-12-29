@@ -18,7 +18,7 @@ angular.module('myApp.mail')
         }]
 
         return{
-            templateUrl: 'directives/gnavitem/gnavitem.html',
+            templateUrl: 'Directives/GNavItem/gnavitem.html',
             controller: controller,
             controllerAs: 'vm',
             bindToController: true,

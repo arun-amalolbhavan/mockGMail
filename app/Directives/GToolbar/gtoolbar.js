@@ -8,7 +8,7 @@ angular.module('myApp.mail')
         }]
 
         return{
-            templateUrl: 'directives/gtoolbar/gtoolbar.html',
+            templateUrl: 'Directives/GToolbar/gtoolbar.html',
             controller: controller,
             controllerAs: 'vm',
             bindToController: true

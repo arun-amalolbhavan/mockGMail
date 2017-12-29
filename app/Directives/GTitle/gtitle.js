@@ -9,7 +9,7 @@ angular.module('myApp.mail')
         }]
 
         return{
-            templateUrl: 'directives/gtitle/gtitle.html',
+            templateUrl: 'Directives/GTitle/gtitle.html',
             controller: controller,
             controllerAs: 'vm',
             bindToController: true

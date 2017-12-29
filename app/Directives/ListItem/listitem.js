@@ -18,7 +18,7 @@ angular.module('myApp.mail')
         }]
 
         return{
-            templateUrl: 'directives/listitem/listitem.html',
+            templateUrl: 'Directives/ListItem/listitem.html',
             controller: controller,
             controllerAs: 'vm',
             bindToController: true,
