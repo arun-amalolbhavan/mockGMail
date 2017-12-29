@@ -1,15 +1,14 @@
 'use strict';
 
 angular.module('myApp.mail')
-    .directive('gTitle',[function(){
+    .directive('gNav',[function(){
 
         var controller = [function(){
             var vm = this;
-            vm.searchText = '';
         }]
 
         return{
-            templateUrl: 'view/gtitle/gtitle.html',
+            templateUrl: 'directives/gnav/gnav.html',
             controller: controller,
             controllerAs: 'vm',
             bindToController: true

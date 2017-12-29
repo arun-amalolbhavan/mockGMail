@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('myApp.mail')
-    .directive('gPagination',[function(){
+    .directive('gToolbar',[function(){
 
         var controller = [function(){
             var vm = this;
         }]
 
         return{
-            templateUrl: 'view/pagination/pagination.html',
+            templateUrl: 'directives/gtoolbar/gtoolbar.html',
             controller: controller,
             controllerAs: 'vm',
             bindToController: true

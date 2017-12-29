@@ -35,7 +35,7 @@ button:focus
 {
   font-size: 2em;
   font-weight: 500;
-  width: 175px;
+  width: 170px;
 }
 
 @media (max-width: 1061px) {
@@ -143,7 +143,7 @@ button:focus
 .toolbar
 {
   display: flex;
-  padding: .7em .7em .7em 2em ;
+  padding: .7em .7em .7em 1.7em ;
   border-bottom: 1px solid rgba(136, 103, 62, 0.87);
   min-height: 50px;
 }
@@ -302,7 +302,7 @@ button:focus
 .navigation
 {
   padding: .7em .7em .7em 0em;
-  width: 210px;
+  width: 200px;
 }
 
 .compose-mail
@@ -386,7 +386,7 @@ It contains the list of mails
 
 md-tab-item
 {
-  background-color: #e1e1e1;
+  background-color: #c9c9c9;
   color: black!important;
   text-transform: none!important;
   width: 220px;
@@ -395,11 +395,7 @@ md-tab-item
 
 md-tab-item.md-active
 {
-  background-color: white;
-}
-
-.tab-title
-{
+  background-color: #e7e7e7;
 }
 
 .tab-title-text
@@ -418,4 +414,74 @@ md-content
   height: 500px;
   margin: 0 !important;
   padding: 0 !important;
+  background-color: #e7e7e7;
+}
+
+.list-item-outer .justify-left
+{
+  width: 1800px;
+}
+
+.list-item-outer
+{
+  border-bottom: 1px solid #afafaf;
+  padding: .5em 0 .5em 0;
+  overflow: hidden;
+  font-family: Calibri;
+  height: 40px;
+}
+
+.list-item-outer:hover
+{
+  cursor: pointer!important;
+}
+
+/*.m-list g-mail-item:last-child div*/
+/*{*/
+  /*border-bottom: 0 !important;*/
+/*}*/
+
+.list-item-outer div
+{
+  display: inline-block;
+  padding: 0 0 0 10px
+}
+
+.marker
+{
+  border: 1px solid red;
+  width:2px;
+  height: .5em;
+}
+
+.list-item-outer.unread
+{
+  font-weight: bold;
+}
+
+.list-item-outer .item-from
+{
+  width: 150px;
+  padding-left: 20px !important;
+}
+
+.list-item-outer .item-body
+{
+  font-weight: normal !important;
+}
+
+.list-item-outer .item-from
+{
+  font-weight: bold;
+}
+
+.list-item-outer .received-time
+{
+  position: relative;
+  display: inline;
+  float: right;
+  font-weight: bold;
+  top: -20px;
+  padding-right:15px;
+  background-color: #e7e7e7 !important;
 }
