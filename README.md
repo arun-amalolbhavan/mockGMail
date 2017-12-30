@@ -1,2 +1,2 @@
-# A G_Mail web clinet using AngularJS
+# G_Mail web clinet using AngularJS
 
