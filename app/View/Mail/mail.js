@@ -6,11 +6,17 @@ angular.module('myApp.mail', ['ui.router','ngMaterial'])
         $stateProvider.state('mail', {
             url: '/mail',
             templateUrl: 'View/Mail/mail.html',
-            controller: 'MailCtrl'
-        });
+            controller: 'ViewCtrl'
+        })
+            .state('mail.view',{
+                url:'/:view',
+                controller: 'ViewCtrl'
+            });
 
     }])
 
-    .controller('MailCtrl', ['$state',function($state) {
-
+    .controller('ViewCtrl',['$state','$stateParams',function($state,$stateParams){
+        var child = ($stateParams.view || "");
+        if( child == 'inbox' || child == "")
+             $state.go('mail.list');
     }]);
