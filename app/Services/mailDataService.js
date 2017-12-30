@@ -17,15 +17,15 @@ angular.module('myApp.mail')
         dataBase.tags = ['Primary', 'Social','Promotions'];
         var total_number_of_mails = 1100;
 
-        for(var i =0; i < total_number_of_mails; i++)
+        for(var i =1; i < total_number_of_mails; i++)
         {
             var mailItem = {
-                subject:'Sample Subject - ' + i,
+                subject:'Sample Subject ' + i,
                 from:'<Arun A> arun.a@gmail.com',
                 to:['<recepient>dummy@gmail.com'],
                 body_type:'text',
-                body:'Message '+ i +' : This is a samlple text \
-                  with a multiple lines',
+                body:'Message '+ i +' : This is a samlple text \r\n\
+                  with multiple lines. \r\n Hello, have a nice day....',
                 attachments:[],
                 sent_time:new Date(),
                 flags:{

@@ -406,7 +406,7 @@ md-tab-item.md-active
 
 md-tabs
 {
-  height: 500px !important;
+  height: 520px !important;
 }
 
 md-content
@@ -420,6 +420,11 @@ md-content
 .list-item-outer .justify-left
 {
   width: 1800px;
+}
+
+md-tab-content
+{
+  overflow: hidden;
 }
 
 .list-item-outer
@@ -468,6 +473,7 @@ md-content
 .list-item-outer .item-body
 {
   font-weight: normal !important;
+  color: #858585;
 }
 
 .list-item-outer .item-from

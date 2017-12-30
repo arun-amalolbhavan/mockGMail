@@ -5,8 +5,7 @@ angular.module('myApp.mail')
         $stateProvider.state('mail.list', {
             url:'/inbox',
             templateUrl: 'View/GContent/List/gcontent.list.html',
-            controller: 'MailListCtrl',
-            ControllerAs: 'vm',
+            controller: 'MailListCtrl as vm',
             bindToController: true
 
         });
@@ -14,5 +13,5 @@ angular.module('myApp.mail')
     .controller('MailListCtrl', ['mailDataService','mailConfigService','mailInstanceService',function(mailDataService, mailConfigService, mailInstanceService) {
 
         var vm = this;
-        vm.mail_ist = mailDataService.getInboxData(((mailDataService.currentPage - 1) * mailConfigService.PageSize) + 1, mailInstanceService.currentPage * mailConfigService.PageSize);
+        vm.mail_list = mailDataService.getInboxData(((mailDataService.currentPage - 1) * mailConfigService.PageSize) + 1, mailInstanceService.currentPage * mailConfigService.PageSize);
     }]);

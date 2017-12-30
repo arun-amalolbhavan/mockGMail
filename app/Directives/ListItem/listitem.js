@@ -5,15 +5,9 @@ angular.module('myApp.mail')
 
         var controller = [function(){
             var vm = this;
-
-            vm.classSelected = function()
+            vm.getFromName = function()
             {
-                if(vm.selected)
-                {
-                    return "selected";
-                }
-                else
-                    return "";
+                return vm.mailItem.from.substring(vm.mailItem.from.lastIndexOf("<")+1,vm.mailItem.from.lastIndexOf(">"));
             }
         }]
 
@@ -23,8 +17,7 @@ angular.module('myApp.mail')
             controllerAs: 'vm',
             bindToController: true,
             scope:{
-                name:'@',
-                selected:'@'
+                mailItem:'=mail'
             }
         }
     }])

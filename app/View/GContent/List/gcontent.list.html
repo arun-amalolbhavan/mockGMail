@@ -9,13 +9,8 @@
             </md-tab-label>
             <md-tab-body>
                 <md-content class="md-padding">
-                    <div class="m-list">
-                        <g-mail-item></g-mail-item>
-                        <g-mail-item></g-mail-item>
-                        <g-mail-item></g-mail-item>
-                        <g-mail-item></g-mail-item>
-                        <g-mail-item></g-mail-item>
-                        <g-mail-item></g-mail-item>
+                    <div ng-repeat="mitem in vm.mail_list.Primary.items" class="m-list">
+                        <g-mail-item mail="mitem"></g-mail-item>
                     </div>
                 </md-content>
             </md-tab-body>
@@ -29,10 +24,8 @@
             </md-tab-label>
             <md-tab-body>
                 <md-content class="md-padding">
-                    <div class="m-list">
-                        <g-mail-item></g-mail-item>
-                        <g-mail-item></g-mail-item>
-                        <g-mail-item></g-mail-item>
+                    <div ng-repeat="mitem in vm.mail_list.Social.items" class="m-list">
+                        <g-mail-item mail="mitem"></g-mail-item>
                     </div>
                 </md-content>
             </md-tab-body>
@@ -46,11 +39,8 @@
             </md-tab-label>
             <md-tab-body>
                 <md-content class="md-padding">
-                    <div class="m-list">
-                        <g-mail-item></g-mail-item>
-                        <g-mail-item></g-mail-item>
-                        <g-mail-item></g-mail-item>
-                        <g-mail-item></g-mail-item>
+                    <div ng-repeat="mitem in vm.mail_list.Promotions.items" class="m-list">
+                        <g-mail-item mail="mitem"></g-mail-item>
                     </div>
                 </md-content>
             </md-tab-body>
