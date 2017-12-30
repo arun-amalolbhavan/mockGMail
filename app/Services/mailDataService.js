@@ -3,10 +3,13 @@
 // This service connects to the database and gets the mail data
 
 angular.module('myApp.mail')
-.factory('mailDataService',[function(){
+.factory('mailDataService',['$rootScope','mailInstanceService','mailConfigService',function($rootScope, mailInstanceService, mailConfigService){
 
     var dataBase = {};
-    var current_mail_list = [];
+
+    $rootScope.$on('updateData', function(e, data){
+        service.getInboxData(((mailInstanceService.currentPage - 1) * mailConfigService.PageSize) + 1, mailInstanceService.currentPage * mailConfigService.PageSize);
+    });
 
     ///////////////////////////
     // Generate the database
@@ -61,14 +64,18 @@ angular.module('myApp.mail')
                 result[tag].total_items = items_with_tag.length;
             });
 
-            return result;
+            this.SearchResults = result;
+            $rootScope.$broadcast('dataUpdated');
+            //return result;
         },
 
-        totalMails: dataBase.total_mail_list.length,
+        TotalMails: dataBase.total_mail_list.length,
 
         checkFlag : function(mailitem, flag) {
             return mailitem.flags[flag];
-        }
+        },
+
+        SearchResults : {}
     }
 
     return service;
