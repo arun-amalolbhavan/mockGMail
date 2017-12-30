@@ -7,7 +7,7 @@ angular.module('myApp.mail')
 
     var dataBase = {};
 
-    $rootScope.$on('updateData', function(e, data){
+    $rootScope.$on('updateMailList', function(e, data){
         service.getInboxData(mailInstanceService.PageDetails);
     });
 
@@ -55,18 +55,20 @@ angular.module('myApp.mail')
     var service = {
         getInboxData: function(range){
 
-            var result = {};
+            var result = [];
 
             dataBase.tags.forEach(function(tag, index){
-                result[tag] = {};
+                var result_category = {};
+                result_category.Name = tag;
                 // Get mails with tag
                 var items_with_tag = dataBase.total_mail_list.filter(function(item) {return item.tag == tag});
                 mailInstanceService.setMaxRecord(tag,items_with_tag.length);
-                result[tag].items = items_with_tag.slice(mailInstanceService.getStartRecordNumber(tag)-1,mailInstanceService.getEndRecordNumber(tag));
+                result_category.items = items_with_tag.slice(mailInstanceService.getStartRecordNumber(tag)-1,mailInstanceService.getEndRecordNumber(tag));
+                result.push(result_category);
             });
 
-            mailInstanceService.SearchResults = result;
-            $rootScope.$broadcast('dataUpdated');
+            mailInstanceService.InboxResults = result;
+            $rootScope.$broadcast('mailListUpdated');
             //return result;
         },
 

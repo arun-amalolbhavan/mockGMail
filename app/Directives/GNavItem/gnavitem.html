@@ -1,9 +1,9 @@
-<div class="g-nav-item-outer">
-    <div class="selection-indicator {{vm.classSelected()}}"></div>
+<div class="g-nav-item-outer" ng-click="mo.selectMenuItem()">
+    <div class="selection-indicator {{mo.classSelected()}}"></div>
     <div class="item">
         <button class="menu-button">
-            <div class="name {{vm.classSelected()}}">
-                {{vm.name}}
+            <div class="name {{mo.classSelected()}}">
+                {{mo.menuItem.Name}} {{mo.getItemCount()}}
             </div>
             <div class="submenu"></div>
         </button>

@@ -1,45 +1,15 @@
 <div class="mail-outer">
     <md-tabs md-border-bottom>
-        <md-tab>
+        <md-tab ng-repeat="category in vm.mail_list" md-on-select="vm.setActiveCategory(category.Name)">
             <md-tab-label>
                 <div class="tab-title">
-                    <i class="fa fa-envelope-square fa-lg" aria-hidden="true"></i>
-                    <div class="tab-title-text">Primary</div>
+                    <i class="fa {{vm.getCategoryIcon(category.Name)}} fa-lg" aria-hidden="true"></i>
+                    <div class="tab-title-text">{{category.Name}}</div>
                 </div>
             </md-tab-label>
             <md-tab-body>
                 <md-content class="md-padding">
-                    <div ng-repeat="mitem in vm.mail_list.Primary.items" class="m-list">
-                        <g-mail-item mail="mitem"></g-mail-item>
-                    </div>
-                </md-content>
-            </md-tab-body>
-        </md-tab>
-        <md-tab>
-            <md-tab-label>
-                <div class="tab-title">
-                    <i class="fa fa-users fa-lg" aria-hidden="true"></i>
-                    <div class="tab-title-text">Social</div>
-                </div>
-            </md-tab-label>
-            <md-tab-body>
-                <md-content class="md-padding">
-                    <div ng-repeat="mitem in vm.mail_list.Social.items" class="m-list">
-                        <g-mail-item mail="mitem"></g-mail-item>
-                    </div>
-                </md-content>
-            </md-tab-body>
-        </md-tab>
-        <md-tab>
-            <md-tab-label>
-                <div class="tab-title">
-                    <i class="fa fa-tags fa-lg" aria-hidden="true"></i>
-                    <div class="tab-title-text">Promotions</div>
-                </div>
-            </md-tab-label>
-            <md-tab-body>
-                <md-content class="md-padding">
-                    <div ng-repeat="mitem in vm.mail_list.Promotions.items" class="m-list">
+                    <div ng-repeat="mitem in category.items" class="m-list">
                         <g-mail-item mail="mitem"></g-mail-item>
                     </div>
                 </md-content>

@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('myApp.mail')
-    .factory('mailInstanceService',['mailConfigService','$location',function(mailConfigService, $location){
+    .factory('mailInstanceService',['mailConfigService','$location','$rootScope',function(mailConfigService, $location, $rootScope){
 
         var instanceService = {};
 
-        instanceService.SearchResults = {};
+        instanceService.InboxResults = {};
 
         instanceService.PageDetails = [
             {
@@ -28,8 +28,22 @@ angular.module('myApp.mail')
         instanceService.serachText = '';
         instanceService.selectedMails = [];
 
+        instanceService.getTotalInboxCount = function () {
+            var count = 0;
+            for(var i =0 ; i < instanceService.PageDetails.length ; i++)
+            {
+                count+= instanceService.PageDetails[i].MaxRecords;
+            }
+            return count;
+        }
+
         instanceService.getActiveCategoryDetails = function() {
             return instanceService.PageDetails.filter(function (item) { return item.Category == instanceService.ActiveCategory })[0];
+        }
+
+        instanceService.setActiveCategory = function(category) {
+            instanceService.ActiveCategory = category;
+            $rootScope.$broadcast('categorySelected');
         }
 
         instanceService.getStartRecordNumber = function(category) {
@@ -72,6 +86,18 @@ angular.module('myApp.mail')
         instanceService.getCurrentMaxRecord = function(catergory)
         {
             return instanceService.getMaxRecord(instanceService.ActiveCategory);
+        }
+
+        instanceService.checkIndexOfCategory = function(category)
+        {
+            var index = 0;
+            for(var i = 0; i < instanceService.PageDetails.length; i++) {
+                if(instanceService.PageDetails[i].Category == category) {
+                    index = i;
+                    break;
+                }
+            }
+            return index;
         }
 
         instanceService.incrementActiveCategoryPage = function() {

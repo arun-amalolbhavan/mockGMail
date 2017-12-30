@@ -13,7 +13,7 @@ body{
   min-width: 860px;
 }
 
-button:focus, i:focus
+button:focus, i:focus, div:focus
 {
   outline: none;
 }
@@ -323,6 +323,7 @@ button:focus, i:focus
 {
   display: flex;
   padding: 2px 0 2px 0;
+  cursor: pointer;
 }
 
 .g-nav-item-outer div

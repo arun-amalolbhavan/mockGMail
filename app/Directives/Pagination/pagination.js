@@ -8,24 +8,27 @@ angular.module('myApp.mail')
         var controller = ['$scope',function($scope){
             var vm = this;
 
+            $scope.$on('categorySelected', function() {
+                vm.currentRecords = getRange();
+            });
+
             var getRange = function () {
                 return mailInstanceService.getCurrentStartRecordNumber() + '-' + mailInstanceService.getCurrentEndRecordNumber() + ' of ' + mailInstanceService.getCurrentMaxRecord();
             }
 
             vm.currentRecords = getRange();
 
-            vm.nextPage = function() {
+            vm.nextPage = function($event) {
                 if(mailInstanceService.incrementActiveCategoryPage()) {
                     vm.currentRecords = getRange();
-                    $scope.$emit('updateData');
+                    $scope.$emit('updateMailList');
                 }
-
             }
 
             vm.previousPage = function() {
                 if(mailInstanceService.decrementActiveCategoryPage()){
                     vm.currentRecords = getRange();
-                    $scope.$emit('updateData');
+                    $scope.$emit('updateMailList');
                 }
             }
 
