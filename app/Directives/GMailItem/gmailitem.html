@@ -1,7 +1,7 @@
 <!--<div class="marker"></div>-->
 <div class="list-item-outer unread">
     <div class="justify-left">
-        <div class="item-select"><input type="checkbox"></div>
+        <div class="item-select"><input type="checkbox" ng-model="vm.itemSelected" ></div>
         <div class="item-star"><i class="fa {{vm.getStarIcon()}}" aria-hidden="true" ng-click="vm.toggleStar()"></i></div>
         <div class="item-important"><i class="fa {{vm.getBookmarkIcon()}}" aria-hidden="true" ng-click="vm.toggleBookmark()"></i></div>
         <div class="item-from">{{vm.getFromName()}}</div>

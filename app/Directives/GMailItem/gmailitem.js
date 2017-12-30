@@ -3,7 +3,7 @@
 angular.module('myApp.mail')
     .directive('gMailItem',[function(){
 
-        var controller = [function(){
+        var controller = ['$scope',function($scope){
             var vm = this;
 
             vm.getFromName = function()
@@ -43,10 +43,17 @@ angular.module('myApp.mail')
                 else
                     vm.mailItem.flags.important = true;
             }
+
+            vm.itemSelected = false;
+
+            $scope.$watch('vm.itemSelected', function(newValue, oldValue){
+                vm.mailItem.flags.selected = newValue;
+            });
+
         }]
 
         return{
-            templateUrl: 'Directives/ListItem/listitem.html',
+            templateUrl: 'Directives/GMailItem/gmailitem.html',
             controller: controller,
             controllerAs: 'vm',
             bindToController: true,

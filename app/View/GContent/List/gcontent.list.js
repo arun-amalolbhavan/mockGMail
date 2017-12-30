@@ -10,12 +10,12 @@ angular.module('myApp.mail')
 
         });
     }])
-    .controller('MailListCtrl', ['mailDataService','$scope','$rootScope',function(mailDataService,$scope,$rootScope) {
+    .controller('MailListCtrl', ['mailDataService','mailInstanceService','$scope','$rootScope',function(mailDataService, mailInstanceService,$scope,$rootScope) {
 
         var vm = this;
         $rootScope.$on('dataUpdated',function(e, data) {
-            vm.mail_list = mailDataService.SearchResults;
-        })
-        //vm.mail_list = mailDataService.getInboxData(((mailDataService.currentPage - 1) * mailConfigService.PageSize) + 1, mailInstanceService.currentPage * mailConfigService.PageSize);
+            vm.mail_list = mailInstanceService.SearchResults;
+        });
+
         $scope.$emit('updateData');
     }]);

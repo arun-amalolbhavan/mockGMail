@@ -8,7 +8,7 @@ angular.module('myApp.mail')
     var dataBase = {};
 
     $rootScope.$on('updateData', function(e, data){
-        service.getInboxData(((mailInstanceService.currentPage - 1) * mailConfigService.PageSize) + 1, mailInstanceService.currentPage * mailConfigService.PageSize);
+        service.getInboxData(mailInstanceService.PageDetails);
     });
 
     ///////////////////////////
@@ -53,18 +53,19 @@ angular.module('myApp.mail')
 
 
     var service = {
-        getInboxData: function(start, end){
+        getInboxData: function(range){
+
             var result = {};
 
             dataBase.tags.forEach(function(tag, index){
                 result[tag] = {};
                 // Get mails with tag
                 var items_with_tag = dataBase.total_mail_list.filter(function(item) {return item.tag == tag});
-                result[tag].items = items_with_tag.slice(start,end);
-                result[tag].total_items = items_with_tag.length;
+                mailInstanceService.setMaxRecord(tag,items_with_tag.length);
+                result[tag].items = items_with_tag.slice(mailInstanceService.getStartRecordNumber(tag)-1,mailInstanceService.getEndRecordNumber(tag));
             });
 
-            this.SearchResults = result;
+            mailInstanceService.SearchResults = result;
             $rootScope.$broadcast('dataUpdated');
             //return result;
         },
@@ -73,9 +74,7 @@ angular.module('myApp.mail')
 
         checkFlag : function(mailitem, flag) {
             return mailitem.flags[flag];
-        },
-
-        SearchResults : {}
+        }
     }
 
     return service;
