@@ -30,6 +30,8 @@ angular.module('myApp.mail')
                 sent_time:new Date(),
                 flags:{
                     read: true,
+                    starred: false,
+                    important: false
                 },
                 tag:'Primary',
                 Category: 'Inbox',

@@ -7,6 +7,7 @@ angular.module('myApp.mail')
 
         instanceService.currentPage = 1;
         instanceService.serachText = '';
+        instanceService.selectedMails = [];
 
         //instanceService.searchResult = mailDataService.getInboxData(((instanceService.currentPage-1)*mailConfigService.PageSize)+1, instanceServ
 

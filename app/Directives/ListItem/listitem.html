@@ -2,8 +2,8 @@
 <div class="list-item-outer unread">
     <div class="justify-left">
         <div class="item-select"><input type="checkbox"></div>
-        <div class="item-star"><i class="fa fa-star-o" aria-hidden="true"></i></div>
-        <div class="item-important"><i class="fa fa-bookmark-o" aria-hidden="true"></i></div>
+        <div class="item-star"><i class="fa {{vm.getStarIcon()}}" aria-hidden="true" ng-click="vm.toggleStar()"></i></div>
+        <div class="item-important"><i class="fa {{vm.getBookmarkIcon()}}" aria-hidden="true" ng-click="vm.toggleBookmark()"></i></div>
         <div class="item-from">{{vm.getFromName()}}</div>
         <div class="item-summary">{{vm.mailItem.subject}} -
             <span class="item-body">{{vm.mailItem.body}}</span>

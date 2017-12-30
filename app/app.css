@@ -13,7 +13,7 @@ body{
   min-width: 860px;
 }
 
-button:focus
+button:focus, i:focus
 {
   outline: none;
 }
@@ -502,4 +502,9 @@ md-tab-content
 {
   color: darkgoldenrod;
   font-weight: bold;
+}
+
+.star-color
+{
+  color: darkgoldenrod;
 }
