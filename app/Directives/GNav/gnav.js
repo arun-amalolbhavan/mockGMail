@@ -7,7 +7,7 @@ angular.module('myApp.mail')
             var vm = this;
             vm.menuItems = mailConfigService.MenuItems;
 
-            vm.ComposeMailOpened = true;
+            vm.ComposeMailOpened = false;
 
             vm.openNewMailEdtitor = function () {
                 vm.ComposeMailOpened = true;

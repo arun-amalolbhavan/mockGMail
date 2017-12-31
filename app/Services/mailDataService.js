@@ -53,6 +53,11 @@ angular.module('myApp.mail')
             else if(i%10 == 0)
                 mailItem.tag = 'Social';
 
+            if(i%100 == 0)
+                mailItem.flags.starred = true;
+            if(i%150 == 0)
+                mailItem.flags.important = true;
+
             dataBase.total_mail_list.push(mailItem);
         }
     })();
