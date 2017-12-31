@@ -1,7 +1,13 @@
 <div class="mail-outer">
-    <md-content>
-        <div ng-repeat="mitem in itemList" class="m-list">
-            <g-mail-item mail="mitem"></g-mail-item>
-        </div>
+    <md-content class="md-padding">
+        <md-tab-content-wrapper>
+            <md-tab-content>
+                <div >
+                    <div ng-repeat="mitem in itemList" class="m-list">
+                        <g-mail-item mail="mitem"></g-mail-item>
+                    </div>
+                </div>
+            </md-tab-content>
+        </md-tab-content-wrapper>
     </md-content>
 </div>
