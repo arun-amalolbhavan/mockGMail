@@ -195,7 +195,7 @@ button:focus, i:focus, div:focus
   border: 1px solid gray;
   color: #494949;
   height: 30px;
-  border-radius: 3px;
+  border-radius: 3px!important;
   font-size: smaller;
   font-weight: bold;
 }
@@ -210,7 +210,7 @@ button:focus, i:focus, div:focus
 .button-group
 {
   position: relative;
-  display: flex;
+
 }
 
 .button-group button
@@ -523,8 +523,6 @@ md-tab-content
   right:0px;
   top: auto;
   left:auto;
-  min-width:500px;
-  min-height: 460px;
   margin-right:10px;
   background-color: white;
   z-index: 10;
@@ -532,6 +530,32 @@ md-tab-content
   color: black;
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 880px) {
+
+  .g-mail-editor-outer
+  {
+    min-width: 390px;
+    min-height: 330px;
+  }
+}
+
+@media (min-width:881px) and  (max-width: 1110px) {
+
+  .g-mail-editor-outer
+  {
+    min-width: 450px;
+    min-height: 390px;
+  }
+}
+
+@media (min-width: 1111px) {
+  .g-mail-editor-outer
+  {
+    min-width: 500px;
+    min-height: 460px;
+  }
 }
 
 .compose-header
@@ -567,7 +591,25 @@ md-tab-content
   padding-right: 5px;
 }
 
-
-.g-mail-editor-outer > div
+.g-submenu
 {
+  left: -40px;
+  border-radius: 3px;
+  background-color: rgba(232, 232, 232, 0.99);
+}
+
+.button-group > div
+{
+  position: relative;
+
+
+}
+
+.toolbar-submenu
+{
+  position: absolute;
+  left: 0px;
+  top: 28px;
+  border-radius: 3px;
+  background-color: rgba(232, 232, 232, 0.99);
 }
