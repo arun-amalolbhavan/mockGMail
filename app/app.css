@@ -509,3 +509,54 @@ md-tab-content
 {
   color: darkgoldenrod;
 }
+
+.g-mail-editor-outer
+{
+  position: fixed;
+  bottom:0px;
+  right:0px;
+  top: auto;
+  left:auto;
+  min-width:500px;
+  min-height: 460px;
+  margin-right:10px;
+  background-color: white;
+  z-index: 10;
+  border: 1px solid lightgray;
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.compose-header
+{
+  height:40px;
+  background-color: #4b4b4b;
+  display: flex;
+  align-content: space-between;
+}
+
+.compose-header > div
+{
+  padding: 10px 10px 10px 20px;
+  color:white;
+  flex: 1;
+}
+
+.compose-header .actions
+{
+  color:white;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.compose-header > .actions > div
+{
+  height: 100%;
+  padding-right: 5px;
+}
+
+
+.g-mail-editor-outer > div
+{
+}

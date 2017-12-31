@@ -3,7 +3,8 @@
 // This service connects to the database and gets the mail data
 
 angular.module('myApp.mail')
-.factory('mailDataService',['$rootScope','mailInstanceService','mailConfigService',function($rootScope, mailInstanceService, mailConfigService){
+.factory('mailDataService',['$rootScope','mailInstanceService','mailConfigService',
+    function($rootScope, mailInstanceService, mailConfigService){
 
     var dataBase = {};
 

@@ -14,23 +14,21 @@ angular.module('myApp.mail')
 
         });
     }])
-    .controller('MailStarredCtrl',['$stateParams','$scope','mailConfigService','mailInstanceService',function($stateParams, $scope, mailConfigService, mailInstanceService){
+    .controller('MailStarredCtrl',['$stateParams','$scope','mailConfigService','mailInstanceService',
+        function($stateParams, $scope, mailConfigService, mailInstanceService){
 
         $scope.itemList = [];
-
         $scope.$on('mailListUpdated',function(e, data) {
             $scope.itemList = mailInstanceService.SerachResults;
         });
-
         $scope.$emit('updateMailList', 'starred');
     }])
-    .controller('MailImportantCtrl',['$stateParams','$scope','mailConfigService','mailInstanceService',function($stateParams, $scope, mailConfigService, mailInstanceService){
+    .controller('MailImportantCtrl',['$stateParams','$scope','mailConfigService','mailInstanceService',
+        function($stateParams, $scope, mailConfigService, mailInstanceService){
 
     $scope.itemList = [];
-
     $scope.$on('mailListUpdated',function(e, data) {
         $scope.itemList = mailInstanceService.SerachResults;
     });
-
     $scope.$emit('updateMailList', 'important');
 }]);

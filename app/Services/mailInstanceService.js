@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('myApp.mail')
-    .factory('mailInstanceService',['mailConfigService','$location','$rootScope',function(mailConfigService, $location, $rootScope){
+    .factory('mailInstanceService',['mailConfigService','$location','$rootScope',
+        function(mailConfigService, $location, $rootScope){
 
         var instanceService = {};
 

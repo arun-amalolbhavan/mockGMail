@@ -1,6 +1,7 @@
 <div class="navigation">
     <div class="compose-mail">
-        <button class="g-button new-mail">Compose</button>
+        <button class="g-button new-mail" ng-click="model.openNewMailEdtitor()">Compose</button>
+        <g-mail-editor opened="model.ComposeMailOpened"></g-mail-editor>
     </div>
     <div class="g-menu">
         <g-nav-item ng-repeat="mitem in model.menuItems" menu="mitem"></g-nav-item>

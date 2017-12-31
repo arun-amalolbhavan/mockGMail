@@ -13,7 +13,8 @@ angular.module('myApp.mail')
             });
 
             var getRange = function () {
-                return mailInstanceService.getCurrentStartRecordNumber() + '-' + mailInstanceService.getCurrentEndRecordNumber() + ' of ' + mailInstanceService.getCurrentMaxRecord();
+                return mailInstanceService.getCurrentStartRecordNumber() + '-' +
+                    mailInstanceService.getCurrentEndRecordNumber() + ' of ' + mailInstanceService.getCurrentMaxRecord();
             }
 
             vm.currentRecords = getRange();

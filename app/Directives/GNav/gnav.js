@@ -6,6 +6,12 @@ angular.module('myApp.mail')
         var controller = ['mailConfigService', function(mailConfigService){
             var vm = this;
             vm.menuItems = mailConfigService.MenuItems;
+
+            vm.ComposeMailOpened = true;
+
+            vm.openNewMailEdtitor = function () {
+                vm.ComposeMailOpened = true;
+            }
         }]
 
         return{

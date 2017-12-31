@@ -3,7 +3,8 @@
 angular.module('myApp.mail')
     .directive('gNavItem',[function(){
 
-        var controller = ['mailInstanceService','mailConfigService','$location',function(mailInstanceService, mailConfigService,$location){
+        var controller = ['mailInstanceService','mailConfigService','$location',
+            function(mailInstanceService, mailConfigService,$location){
             var vm = this;
             vm.classSelected = function()
             {
