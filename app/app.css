@@ -608,7 +608,7 @@ md-tab-content
 .toolbar-submenu
 {
   position: absolute;
-  left: 0px;
+  left: -74px;
   top: 28px;
   border-radius: 3px;
   background-color: rgba(232, 232, 232, 0.99);
