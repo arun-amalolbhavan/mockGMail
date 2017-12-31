@@ -2,6 +2,7 @@
 
 .theme-dark{
   color: white;
+  background: linear-gradient(rgba(40, 9, 1, 1), rgba(53, 9, 0, 1));
   overflow: auto;
 }
 
@@ -15,7 +16,7 @@ body{
 
 .gmail-content
 {
-  background: linear-gradient(rgba(40, 9, 1, 0.97), rgba(53, 9, 0, 0.93));
+  background: linear-gradient(rgba(40, 9, 1, 1), rgba(53, 9, 0, 1));
 }
 
 
