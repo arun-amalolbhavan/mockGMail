@@ -2,7 +2,7 @@
 
 .theme-dark{
   color: white;
-  background: linear-gradient(rgba(40, 9, 1, 0.97), rgba(53, 9, 0, 0.93));
+  overflow: auto;
 }
 
 html{
@@ -12,6 +12,12 @@ html{
 body{
   min-width: 860px;
 }
+
+.gmail-content
+{
+  background: linear-gradient(rgba(40, 9, 1, 0.97), rgba(53, 9, 0, 0.93));
+}
+
 
 button:focus, i:focus, div:focus
 {
@@ -442,10 +448,10 @@ md-tab-content
   cursor: pointer!important;
 }
 
-/*.m-list g-mail-item:last-child div*/
-/*{*/
-  /*border-bottom: 0 !important;*/
-/*}*/
+.scroll-mails
+{
+  overflow-y: auto;
+}
 
 .list-item-outer div
 {
@@ -534,6 +540,7 @@ md-tab-content
   background-color: #4b4b4b;
   display: flex;
   align-content: space-between;
+  font-family: "Arial";
 }
 
 .compose-header > div
@@ -545,9 +552,13 @@ md-tab-content
 
 .compose-header .actions
 {
-  color:white;
+  color: #cfcfcf;
   display: flex;
   justify-content: flex-end;
+}
+.compose-header .actions > div:not(:last-child)
+{
+  padding-right: 12px;
 }
 
 .compose-header > .actions > div

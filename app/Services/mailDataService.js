@@ -48,6 +48,11 @@ angular.module('myApp.mail')
                 labels: []
             };
 
+            if(i == 1)
+                mailItem.flags.starred = true;
+            if(i == 3)
+                mailItem.flags.important = true;
+
             if(i%20 == 0)
                 mailItem.tag = 'Promotions';
             else if(i%10 == 0)
