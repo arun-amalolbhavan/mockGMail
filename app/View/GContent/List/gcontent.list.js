@@ -10,7 +10,7 @@ angular.module('myApp.mail')
 
         });
     }])
-    .controller('MailListCtrl', ['mailDataService','mailInstanceService','$scope','$rootScope',function(mailDataService, mailInstanceService,$scope,$rootScope) {
+    .controller('MailListCtrl', ['mailDataService','mailInstanceService', 'mailConfigService', '$scope','$rootScope',function(mailDataService, mailInstanceService,mailConfigService,$scope,$rootScope) {
 
         var vm = this;
         var workaround = 0;

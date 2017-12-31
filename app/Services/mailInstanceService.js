@@ -7,6 +7,8 @@ angular.module('myApp.mail')
 
         instanceService.InboxResults = {};
 
+        instanceService.SerachResults = [];
+
         instanceService.PageDetails = [
             {
                 Category:'Primary',

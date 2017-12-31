@@ -1,24 +1,28 @@
 'use strict';
 
 angular.module('myApp.mail')
-    .factory('mailConfigService',[function(){
+    .factory('mailConfigService',['$rootScope','$location', function($rootScope, $location){
         var configurations = {};
 
+        $rootScope.$on('urlUpdated',function (event) {
+            configurations.selectMenu($location.path());
+        })
+
         configurations.MenuItems= [
-            { SearchKey:'', Name:'Inbox', selected:true },
-            { SearchKey:'is:starred', Name:'Starred', selected:false },
-            { SearchKey:'is:important', Name:'Important', selected:false },
-            { SearchKey:'in:sent', Name:'Sent Mails', selected:false },
-            { SearchKey:'in:draft', Name:'Drafts', selected:false },
-            { SearchKey:'in:trash', Name:'Trash', selected:false },
-            { SearchKey:'in:spam', Name:'Spam', selected:false }
+            { SearchKey:'', Name:'Inbox', selected:true, url:'/mail/inbox' },
+            { SearchKey:'is:starred', Name:'Starred', selected:false, url:'/mail/starred' },
+            { SearchKey:'is:important', Name:'Important', selected:false, url:'/mail/important' },
+            { SearchKey:'in:sent', Name:'Sent Mails', selected:false, url:'/mail/sent' },
+            { SearchKey:'in:draft', Name:'Drafts', selected:false, url:'/mail/draft' },
+            { SearchKey:'in:trash', Name:'Trash', selected:false, url:'/mail/trashs' },
+            { SearchKey:'in:spam', Name:'Spam', selected:false, url:'/mail/spam' }
         ];
         configurations.PageSize = 50;
 
         configurations.selectMenu = function(menu_name){
             for(var i=0; i< configurations.MenuItems.length ; i++){
                 var menu = configurations.MenuItems[i];
-                if(menu.Name == menu_name)
+                if(menu.url.toLowerCase() == menu_name.toLowerCase())
                     menu.selected = true;
                 else
                     menu.selected = false;

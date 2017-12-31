@@ -3,7 +3,7 @@
 angular.module('myApp.mail')
     .directive('gNavItem',[function(){
 
-        var controller = ['mailInstanceService','mailConfigService',function(mailInstanceService, mailConfigService){
+        var controller = ['mailInstanceService','mailConfigService','$location',function(mailInstanceService, mailConfigService,$location){
             var vm = this;
             vm.classSelected = function()
             {
@@ -16,7 +16,9 @@ angular.module('myApp.mail')
             }
             
             vm.selectMenuItem = function () {
-                mailConfigService.selectMenu(vm.menuItem.Name);
+                mailConfigService.selectMenu(vm.menuItem.url);
+                $location.path(vm.menuItem.url);
+
             }
 
             vm.itemCount = '';

@@ -8,7 +8,13 @@ angular.module('myApp.mail')
     var dataBase = {};
 
     $rootScope.$on('updateMailList', function(e, data){
-        service.getInboxData(mailInstanceService.PageDetails);
+        var context = data || '';
+        if(context == '')
+            service.getInboxData(mailInstanceService.PageDetails);
+        else if(context == 'starred')
+            service.getStarredMails();
+        else if (context == 'important')
+            service.getImportantMails();
     });
 
     ///////////////////////////
@@ -70,6 +76,18 @@ angular.module('myApp.mail')
             mailInstanceService.InboxResults = result;
             $rootScope.$broadcast('mailListUpdated');
             //return result;
+        },
+
+        getImportantMails: function() {
+            var result = dataBase.total_mail_list.filter(function (item) { return item.flags.important });
+            mailInstanceService.SerachResults = result;
+            $rootScope.$broadcast('mailListUpdated');
+        },
+
+        getStarredMails: function() {
+            var result = dataBase.total_mail_list.filter(function (item) { return item.flags.starred });
+            mailInstanceService.SerachResults = result;
+            $rootScope.$broadcast('mailListUpdated');
         },
 
         TotalMails: dataBase.total_mail_list.length,
