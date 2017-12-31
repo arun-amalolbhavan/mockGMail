@@ -609,6 +609,14 @@ md-tab-content
 .toolbar-submenu
 {
   position: absolute;
+  top: 28px;
+  border-radius: 3px;
+  background-color: rgba(232, 232, 232, 0.99);
+}
+
+.toolbar-submenu-right
+{
+  position: absolute;
   left: -74px;
   top: 28px;
   border-radius: 3px;
