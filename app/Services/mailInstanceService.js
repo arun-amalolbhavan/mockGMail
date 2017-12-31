@@ -46,7 +46,7 @@ angular.module('myApp.mail')
 
         instanceService.setActiveCategory = function(category) {
             instanceService.ActiveCategory = category;
-            $rootScope.$broadcast('categorySelected');
+            $rootScope.$emit('categorySelected');
         }
 
         instanceService.getStartRecordNumber = function(category) {

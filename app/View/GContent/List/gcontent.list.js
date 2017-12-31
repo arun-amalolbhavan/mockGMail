@@ -14,7 +14,17 @@ angular.module('myApp.mail')
         function(mailDataService, mailInstanceService,mailConfigService,$scope,$rootScope) {
 
         var vm = this;
-        var workaround = 0;
+        var workaround = false;
+        vm.selected_index = 0;
+
+        $scope.$watch('vm.selected_index', function (value) {
+            if(workaround) {
+                vm.selected_index = 2;
+                workaround = false;
+            }
+            else
+                mailInstanceService.setActiveCategory(getCategoryFromIndex(value));
+        });
 
         $rootScope.$on('mailListUpdated',function(e, data) {
             if(e.currentScope.$$phase == '$digest')
@@ -22,11 +32,9 @@ angular.module('myApp.mail')
             else {
                 var index = getIndex(mailInstanceService.ActiveCategory);
                 vm.mail_list[index] = mailInstanceService.InboxResults[index];
-
-                workaround = 1;
+                if(index==2)
+                    workaround = true;
             }
-            console.log(vm.mail_list);
-
         });
 
         var getIndex = function(category) {
@@ -38,6 +46,15 @@ angular.module('myApp.mail')
                 return 2
         }
 
+        var getCategoryFromIndex = function (index) {
+            if(index == 0)
+                return 'Primary';
+            else if(index == 1)
+                return 'Social';
+            else if(index == 2)
+                return 'Promotions';
+        };
+
         vm.getCategoryIcon = function(category){
             if(category == 'Primary')
                 return 'fa-envelope-square';
@@ -48,12 +65,6 @@ angular.module('myApp.mail')
         }
 
         vm.setActiveCategory = function (category) {
-            if(workaround!=0)
-            {
-                workaround--;
-                return;
-            }
-            vm.selected_index = getIndex(mailInstanceService.ActiveCategory);
             mailInstanceService.setActiveCategory(category);
 
         }

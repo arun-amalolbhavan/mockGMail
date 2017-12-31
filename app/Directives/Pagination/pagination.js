@@ -5,10 +5,10 @@ angular.module('myApp.mail')
 
         // var maxPages = Math.ceil(mailDataService.TotalMails/mailConfigService.PageSize);
 
-        var controller = ['$scope',function($scope){
+        var controller = ['$scope', '$rootScope',function($scope, $rootScope){
             var vm = this;
 
-            $scope.$on('categorySelected', function() {
+            $rootScope.$on('categorySelected', function() {
                 vm.currentRecords = getRange();
             });
 
@@ -39,6 +39,9 @@ angular.module('myApp.mail')
             templateUrl: 'Directives/Pagination/pagination.html',
             controller: controller,
             controllerAs: 'vm',
-            bindToController: true
+            bindToController: true,
+            scope:{
+
+            }
         }
     }])

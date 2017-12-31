@@ -1,6 +1,6 @@
 <div class="mail-outer">
-    <md-tabs md-border-bottom>
-        <md-tab ng-repeat="category in vm.mail_list" md-on-select="vm.setActiveCategory(category.Name)">
+    <md-tabs md-border-bottom md-selected="vm.selected_index">
+        <md-tab ng-repeat="category in vm.mail_list" >
             <md-tab-label>
                 <div class="tab-title">
                     <i class="fa {{vm.getCategoryIcon(category.Name)}} fa-lg" aria-hidden="true"></i>
