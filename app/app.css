@@ -11,7 +11,7 @@ html{
 }
 
 body{
-  min-width: 860px;
+  min-width: 880px;
 }
 
 .gmail-content
@@ -262,10 +262,6 @@ button:focus, i:focus, div:focus
 
 @media (max-width: 880px)
 {
-  .current-page
-  {
-    display: none;
-  }
 
   md-tab-item
   {
