@@ -5,10 +5,14 @@ angular.module('myApp.mail')
 
         var controller = ['mailConfigService', function(mailConfigService){
             var vm = this;
+
+            // Menu Items
             vm.menuItems = mailConfigService.MenuItems;
 
+            // Compose email box opened or closed
             vm.ComposeMailOpened = false;
 
+            // Click event handler for compose email
             vm.openNewMailEdtitor = function () {
                 vm.ComposeMailOpened = true;
             }

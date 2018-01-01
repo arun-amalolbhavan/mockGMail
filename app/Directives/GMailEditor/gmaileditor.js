@@ -6,6 +6,7 @@ angular.module('myApp.mail')
         var controller = ['mailConfigService', function(mailConfigService){
             var vm = this;
 
+            // Event for closing the email compose window
             vm.closeWindow = function() {
                 vm.opened = false;
             }

@@ -8,6 +8,9 @@ angular.module('myApp.mail')
 
     var dataBase = {};
 
+    // Event Handler for 'updateMailList'
+    // These events will be raised by parts of the page that need to update the mail list
+    // The list will be updated on mailInstanceService
     $rootScope.$on('updateMailList', function(e, data){
         var context = data || '';
         if(context == '')
@@ -67,9 +70,9 @@ angular.module('myApp.mail')
         }
     })();
 
-
-
     var service = {
+        // Get the inbox mail item.
+        // Inbox has multiple categories and mails will be split based on these categories
         getInboxData: function(range){
 
             var result = [];
@@ -84,25 +87,43 @@ angular.module('myApp.mail')
                 result.push(result_category);
             });
 
+            //Update the list of email on mailInstanceService
             mailInstanceService.InboxResults = result;
+
+            // Trigger mailListUpdated event
+            // Elements on the page can subscribe to this event to update the mail list
             $rootScope.$broadcast('mailListUpdated');
+
             //return result;
         },
 
+        // Get emails marked as important
         getImportantMails: function() {
             var result = dataBase.total_mail_list.filter(function (item) { return item.flags.important });
+
+            //Update the list of email on mailInstanceService
             mailInstanceService.SerachResults = result;
+
+            // Trigger mailListUpdated event
+            // Elements on the page can subscribe to this event to update the mail list
             $rootScope.$broadcast('mailListUpdated');
         },
 
+        // Get emails marked as starred
         getStarredMails: function() {
             var result = dataBase.total_mail_list.filter(function (item) { return item.flags.starred });
+
+            //Update the list of email on mailInstanceService
             mailInstanceService.SerachResults = result;
+
+            // Trigger mailListUpdated event
+            // Elements on the page can subscribe to this event to update the mail list
             $rootScope.$broadcast('mailListUpdated');
         },
 
         TotalMails: dataBase.total_mail_list.length,
 
+        // Check flag of particular item
         checkFlag : function(mailitem, flag) {
             return mailitem.flags[flag];
         }

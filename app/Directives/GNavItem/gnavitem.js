@@ -6,6 +6,8 @@ angular.module('myApp.mail')
         var controller = ['mailInstanceService','mailConfigService','$location',
             function(mailInstanceService, mailConfigService,$location){
             var vm = this;
+
+            // Mark the menu item as selected
             vm.classSelected = function()
             {
                 if(vm.menuItem.selected)
@@ -15,9 +17,12 @@ angular.module('myApp.mail')
                 else
                     return "";
             }
-            
+
+            // click event handler to mark the menu item as selected
             vm.selectMenuItem = function () {
                 mailConfigService.selectMenu(vm.menuItem.url);
+
+                // Update the view for the selected menu
                 $location.path(vm.menuItem.url);
 
             }

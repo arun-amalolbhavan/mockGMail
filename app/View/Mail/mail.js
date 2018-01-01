@@ -18,6 +18,7 @@ angular.module('myApp.mail', ['ui.router','ngMaterial'])
     .controller('ViewCtrl',['mailConfigService','$rootScope','$transitions',
         function(mailConfigService,$rootScope,$transitions){
 
+        // Hook for change in URL
         $transitions.onSuccess({}, function(transition) {
             $rootScope.$broadcast('urlUpdated');
             });

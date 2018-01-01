@@ -4,6 +4,8 @@ angular.module('myApp.mail')
     .factory('mailConfigService',['$rootScope','$location', function($rootScope, $location){
         var configurations = {};
 
+        // Event handler for handling url updation
+        // Update the selected menu based on URL
         $rootScope.$on('urlUpdated',function (event) {
             configurations.selectMenu($location.path());
         })
@@ -19,6 +21,7 @@ angular.module('myApp.mail')
         ];
         configurations.PageSize = 50;
 
+        // Function for selection menu based on url
         configurations.selectMenu = function(menu_name){
             for(var i=0; i< configurations.MenuItems.length ; i++){
                 var menu = configurations.MenuItems[i];

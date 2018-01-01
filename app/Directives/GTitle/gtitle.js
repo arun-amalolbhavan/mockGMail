@@ -5,6 +5,8 @@ angular.module('myApp.mail')
 
         var controller = [function(){
             var vm = this;
+
+            // search Text
             vm.searchText = '';
         }]
 

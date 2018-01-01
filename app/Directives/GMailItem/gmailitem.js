@@ -6,11 +6,13 @@ angular.module('myApp.mail')
         var controller = ['$scope',function($scope){
             var vm = this;
 
+            //Get the Name of the sender from the from email. eg: '<Arun A> arun.a@gmail.com'
             vm.getFromName = function()
             {
                 return vm.mailItem.from.substring(vm.mailItem.from.lastIndexOf("<")+1,vm.mailItem.from.lastIndexOf(">"));
             }
 
+            // Get the icon for selected and non selected item
             vm.getStarIcon = function ()
             {
                 if(vm.mailItem.flags.starred)
@@ -19,6 +21,16 @@ angular.module('myApp.mail')
                     return "fa-star-o";
             }
 
+            // Get the icon for selected and non selected item
+            vm.getBookmarkIcon = function ()
+            {
+                if(vm.mailItem.flags.important)
+                    return "fa-bookmark star-color";
+                else
+                    return "fa-bookmark-o";
+            }
+
+            //Toggle starred option for the mail item
             vm.toggleStar = function($event)
             {
                 if(vm.mailItem.flags.starred)
@@ -28,14 +40,7 @@ angular.module('myApp.mail')
 
             }
 
-            vm.getBookmarkIcon = function ()
-            {
-                if(vm.mailItem.flags.important)
-                    return "fa-bookmark star-color";
-                else
-                    return "fa-bookmark-o";
-            }
-
+            // Toggle bookmark option for the mail item
             vm.toggleBookmark = function()
             {
                 if(vm.mailItem.flags.important)
@@ -44,6 +49,7 @@ angular.module('myApp.mail')
                     vm.mailItem.flags.important = true;
             }
 
+            // Mark item selection
             vm.itemSelected = false;
 
             $scope.$watch('vm.itemSelected', function(newValue, oldValue){
