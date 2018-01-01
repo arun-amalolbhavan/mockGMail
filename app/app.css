@@ -229,7 +229,7 @@ button:focus, i:focus, div:focus
   border-left: 0px !important;
 }
 
-@media (min-width: 1120px)
+@media (min-width: 1170px)
 {
   .button-group button
   {
@@ -242,7 +242,7 @@ button:focus, i:focus, div:focus
   }
 }
 
-@media (max-width: 1119px)
+@media (max-width: 1169px)
 {
   .button-group button
   {
