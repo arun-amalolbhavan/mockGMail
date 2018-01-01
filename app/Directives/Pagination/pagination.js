@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('myApp.mail')
-    .directive('gPagination',['mailDataService','mailInstanceService','mailConfigService',function(mailDataService, mailInstanceService, mailConfigService){
+    .directive('gPagination',['mailDataService','mailInstanceService','mailConfigService',
+        function(mailDataService, mailInstanceService, mailConfigService){
 
         // var maxPages = Math.ceil(mailDataService.TotalMails/mailConfigService.PageSize);
 
