@@ -15,13 +15,8 @@ angular.module('myApp.mail', ['ui.router','ngMaterial'])
 
     }])
 
-    .controller('ViewCtrl',['mailConfigService','$state','$stateParams','$rootScope','$transitions',
-        function(mailConfigService,$state,$stateParams,$rootScope,$transitions){
-        var child = ($stateParams.view || "");
-        if( child == 'inbox' || child == "")
-             $state.go('mail.list');
-        else if(child == 'starred')
-            $state.go('mail.starred');
+    .controller('ViewCtrl',['mailConfigService','$rootScope','$transitions',
+        function(mailConfigService,$rootScope,$transitions){
 
         $transitions.onSuccess({}, function(transition) {
             $rootScope.$broadcast('urlUpdated');
